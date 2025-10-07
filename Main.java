@@ -29,5 +29,15 @@ public class Main{
     String new2 = f2 + end1;
     System.out.println(new1);
     System.out.println(new2);
+
+    // find and replace stuff
+    int loc1 = word1.indexOf("oo");
+    int loc2 = word1.indexOf("aa");
+    System.out.println(loc1 + " " + loc2);
+    String new3 = word1.replace("oo","aa");
+    System.out.println(new3);
+    String new4 = word1.replace("k","x");
+    System.out.println(new4);
+    System.out.println(new4.toUpperCase());
   }
 }
