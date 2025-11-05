@@ -1,3 +1,4 @@
+package U3;
 public class Conditionals {
     /**
      * Returns true if both freshman are smiling or neither is smiling.

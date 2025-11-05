@@ -1,3 +1,4 @@
+package U3;
 import java.util.Scanner;
 /**
  * CrapsGame class
