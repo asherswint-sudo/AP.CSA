@@ -20,7 +20,6 @@ public class TwoSpinners {
   	*/
  	public void playRound()
  	{
-        double score = 0;
    	    double human1 = spin(2,8);
         double com1 = spin(1,10);	
         if (human1 > com1)  System.out.println("You win! " + (int)(human1 - com1) + " points");
@@ -43,3 +42,15 @@ public class TwoSpinners {
      	    }
  	}
 }
+
+// Output for a test round
+// You win! 2 points
+// You lose. -4 points
+// You lose. -1 points
+// You win! 4 points
+// You win! 1 point
+// You lose. -6 points
+// You lose. -3 points
+// You win! 1 points
+// You lose. -1 points
+// You lose. -1 points
