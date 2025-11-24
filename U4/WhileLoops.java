@@ -34,19 +34,21 @@ public class WhileLoops {
     }
 
     public static void printSum(int n){
-        int a = 0;
-        int result = 0;
-        System.out.println("n = "  + n);
-        while(a < n){
-            result += a;
-            a++;
-            System.out.print(a + " + ");
-            
+        int total = 0;
+        int test = 1;
+        String printout = "";
+        System.out.println("n = " + n + ":");  
+        while (test<=n){
+            total += test;
+            printout += (test + " ");
+            test++;
+            if (test <= n){
+                printout += ("+ ");
+            }
         }
-        
-        System.out.print(" = " + result);
-        System.out.println("");
+        System.out.println(printout + "= " + total);
     }
+    
     public static boolean isPerfectSquare(int n){
         int a = 1;
         int b = 0;
@@ -66,8 +68,8 @@ public class WhileLoops {
 
         System.out.println("sumDigits");
         System.out.println(sumDigits(13));
-        System.out.println(sumDigits(600));
-        System.out.println(sumDigits(412));
+        System.out.println(sumDigits(982473));
+        System.out.println(sumDigits(4805));
 
         System.out.println("");
 
@@ -79,17 +81,45 @@ public class WhileLoops {
        
         System.out.println("printSum");
         printSum(6);
-        printSum(8);
+        printSum(25);
         printSum(3);
 
         System.out.println("");
 
         System.out.println("isPerfectSquare");
         System.out.println(isPerfectSquare(100));
-        System.out.println(isPerfectSquare(81));
+        System.out.println(isPerfectSquare(9));
         System.out.println(isPerfectSquare(33));
         System.out.println(isPerfectSquare(444));
 
     }
 
 }
+// Output
+// addOdds
+// 9
+// 100
+// 36
+
+// sumDigits
+// 4
+// 33
+// 17
+
+// howManyYears
+// 7
+// 27
+
+// printSum
+// n = 6:
+// 1 + 2 + 3 + 4 + 5 + 6 = 21
+// n = 25:
+// 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 + 11 + 12 + 13 + 14 + 15 + 16 + 17 + 18 + 19 + 20 + 21 + 22 + 23 + 24 + 25 = 325
+// n = 3:
+// 1 + 2 + 3 = 6
+
+// isPerfectSquare
+// true
+// true
+// false
+// false
