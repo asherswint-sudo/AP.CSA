@@ -54,6 +54,34 @@ public class ForLoops {
         }
     }
 
+    public static void dollarsAndStars(){
+        int s1 = 0;
+        int s2 = 14;
+        int d = 7;
+        for(int k = 0; k < 7; k++){
+            for(int a = 0; a < s1; a++){
+                System.out.print("*");
+            }
+            for(int b = 0; b < d; b++){
+                System.out.print("$");
+            }
+            for(int c = 0; c < s2; c++){
+                System.out.print("*");
+            }
+            for(int e = 0; e < d; e++){
+                System.out.print("$");
+            }
+            for(int f = 0; f < s1; f++){
+                System.out.print("*");
+            }
+        d --;
+        s1 += 2;
+        s2 -= 2;
+        System.out.println("");
+        }
+        
+    }
+
 
     public static void main(String[] args) {
         System.out.println("addEvens");
@@ -82,5 +110,45 @@ public class ForLoops {
         System.out.println("");
         System.out.println("sillynumbers2");
         sillyNumbers2();
+        System.out.println("");
+        System.out.println("");
+        System.out.println("dollarsAndStars");
+        dollarsAndStars();
     }
 }
+
+// Output
+// addEvens
+// 6
+// 12
+// 506
+
+// printSquaresBack
+// 25 16 9 4 1 
+// 4 1
+// 225 196 169 144 121 100 81 64 49 36 25 16 9 4 1
+
+// reverse
+// uhcakiP
+// hsirK
+// tenibaC
+
+// stutter
+// hheelllloo
+// ppuusshhuupp
+// lloooopp
+
+// sillynumbers
+// 000111222333444555666777888999
+
+// sillynumbers2
+// 999999999888888887777777666666555554444333221
+
+// dollarsAndStars
+// $$$$$$$**************$$$$$$$
+// **$$$$$$************$$$$$$**
+// ****$$$$$**********$$$$$****
+// ******$$$$********$$$$******
+// ********$$$******$$$********
+// **********$$****$$**********
+// ************$**$************
