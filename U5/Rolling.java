@@ -1,19 +1,9 @@
+package U5;
 
-/* A statistician is studying sequences of numbers obtained by repeatedly tossing a 6-sided die.  
-The statistician is particularly interested in runs of numbers.  A run occurs when 2 or more
-consecutive tosses of the die produce the same value.  For example, in the following sequence of
-die rolls, there are runs starting at positions 1,6,12,and 14.
-
-Index:	0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17
-Result: 1  5  5  4  3  1  2  2  2  6  1  3  3  5  5  5  5  5
-
-The die is represented by the following class:
-*/
-
-public class RollingDie {
-	/** @return an integer value between 1 and 6
+public class Rolling {
+    /** @return an integer value between 1 and 6
 	*/
-	public int toss()
+	public static int toss()
 	{
 		return (int)(6 * Math.random()) + 1;
 	}
@@ -27,7 +17,7 @@ public class RollingDie {
 	 *			Precondition: numTosses >0
 	 *	@return an array of numTosses values
 	 */
-	public int[] getRolls(int numTosses)
+	public static int[] getRolls(int numTosses)
 	{
         int[] rolls = new int[numTosses];
 		for(int x = 0; x < numTosses; x++){
@@ -47,34 +37,39 @@ public class RollingDie {
 	public int getBestRun(int[] values)
 	{
         
-        int c = -1;
+        int c = 0;
+        int d = -1;
         for(int x = 1; x < values.length; x++){
             int b = 0;
-            for(int y = x; values[y] == values[y-1]; y++){
+            for(int y = x; values[y] == values[y-1] && ; y++){
             if(values[x] == values[x-1]){
                 b++;
                 if(b >= c){
                     c = b;
+                    d = y - c + 1;
                 }
             }
             }
         }
-		return c;  
+		return d;  
 	}
 	
 
 	public static void main(String[] args) {
-		RollingDie nc = new RollingDie();
-        System.out.println(getRolls(10));
-		// for (int p = 0; p < 10; p++) {
-		// 	int[] tossArr = nc.getRolls(20);
-		// 	for (int i = 0; i < 20; i++)
-		// 		System.out.print(tossArr[i] + ",");
-		// 	System.out.println();
+		Rolling nc = new Rolling();
+		
+			int[] tossArr = nc.getRolls(20);
+			for (int i = 0; i < tossArr.length; i++)
+                if(i != tossArr.length - 1){
+                    System.out.print(tossArr[i] + ", ");
+                }
+				else{
+                    System.out.print(tossArr[i]);
+                }
+			System.out.println();
 
-		// 	int x = nc.getBestRun(tossArr);
-		// 	System.out.println(x);
-		// }
+			int x = nc.getBestRun(tossArr);
+			System.out.println(x);
 	}
 
 }
