@@ -41,12 +41,12 @@ public class Rolling {
         int d = -1;
         for(int x = 1; x < values.length; x++){
             int b = 0;
-            for(int y = x; values[y] == values[y-1] && ; y++){
+            for(int y = x; y < values.length && values[y] == values[y-1]; y++){
             if(values[x] == values[x-1]){
                 b++;
                 if(b >= c){
                     c = b;
-                    d = y - c + 1;
+                    d = y - c;
                 }
             }
             }
@@ -67,7 +67,8 @@ public class Rolling {
                     System.out.print(tossArr[i]);
                 }
 			System.out.println();
-
+			
+			
 			int x = nc.getBestRun(tossArr);
 			System.out.println(x);
 	}
