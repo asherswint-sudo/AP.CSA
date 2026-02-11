@@ -1,4 +1,4 @@
-package U6;
+
 
 /* This question uses 2 classes, a Box class that represents an individual square in the puzzle
 and a WordPuzzle class that represents a word puzzle grid.
