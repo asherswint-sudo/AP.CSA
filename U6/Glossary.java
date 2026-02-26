@@ -9,7 +9,6 @@ public class Glossary {
     public  int foundOrInserted(String s){
     s = s.toUpperCase();
     if (a.size() == 0) {
-        System.out.println(s);
         a.add(new GlossaryEntry(s));
         return 0;
     }
@@ -27,6 +26,7 @@ public class Glossary {
     }
 
     public void addWord(String word, int line) {
+        if (word.isEmpty()) return;
         int b = foundOrInserted(word);
         GlossaryEntry entry  = a.get(b);
         entry.add(line);
@@ -43,7 +43,7 @@ public class Glossary {
     }
 
     public void printEntries() {
-        System.out.println(a.size());
+
         for (int i = 0; i < a.size(); i++) {
             System.out.println(a.get(i));
         }
@@ -52,13 +52,14 @@ public class Glossary {
 
 
     public static void main(String[] args) throws IOException {
-        File inputfile = new File("fish.txt");
+        File inputfile = new File("U6/fish.txt");
         Scanner input = new Scanner(inputfile);
 
         Glossary test = new Glossary();
-        int i = 0;
+        int i = 1;
         while (input.hasNextLine()) {
             String line = input.nextLine();
+            
             test.addAllWords(line, i);
             i++;
         }
@@ -66,3 +67,25 @@ public class Glossary {
         test.printEntries();
     }
 }
+
+// Output:
+// A 12 14 15
+// ARE 16
+// BLACK 6
+// BLUE 4 7
+// CAR 14
+// FISH 1 2 3 4 6 7 8 9 16
+// HAS 11 14
+// LITTLE 12 14
+// LOT 15
+// NEW 9
+// OF 16
+// OLD 8
+// ONE 1 11 14
+// RED 3
+// SAY 15
+// STAR 12
+// THERE 16
+// THIS 11 14
+// TWO 2
+// WHAT 15
