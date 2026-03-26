@@ -28,7 +28,7 @@ public class BoxFractal extends JPanel
     int width = 486;
     int height = 486;
     
-    g.setColor();
+    g.setColor(new Color(20, 70, 50));
     drawAndSplit(g, xCenter, yCenter, 1, width, height);
     
   }

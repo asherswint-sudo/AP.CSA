@@ -1,4 +1,4 @@
-package U7;
+
 import java.util.Arrays;
 public class Peg {
 	private int pegNum;
