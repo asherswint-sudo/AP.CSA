@@ -26,7 +26,7 @@ public class SquareRose extends JPanel
     int [] xcoord = {xCenter - 128, xCenter-128, xCenter + 128, xCenter + 128};
     int [] ycoord = {yCenter-128, yCenter + 128, yCenter + 128, yCenter - 128};
     
-    g.setColor(Color.RED);
+    g.setColor(new Color(20, 70, 50));
     drawAndSplit(g, xcoord, ycoord, 1);
     
   }
@@ -63,7 +63,7 @@ public class SquareRose extends JPanel
     JFrame window = new JFrame("Fractals");
     window.setBounds(200, 200, 500, 500);
     window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    SquareRose panel = new SquareRose(7650);
+    SquareRose panel = new SquareRose(50);
     panel.setBackground(Color.WHITE);
     Container c = window.getContentPane();
     c.add(panel);

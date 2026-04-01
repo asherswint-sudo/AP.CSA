@@ -21,6 +21,11 @@ public class SerpinskisTriangle extends JPanel {
         int xCenter = getWidth() / 2;
         int yCenter = getHeight() / 2;
 
+        int x = xCenter - 243;
+        int y = yCenter - 243;
+        int width = 486;
+        int height = 486;
+
         int[] xcoord = { xCenter - 128, xCenter + 128, xCenter };
         int[] ycoord = { yCenter + 128, yCenter + 128, yCenter - 94 };
 
@@ -39,10 +44,13 @@ public class SerpinskisTriangle extends JPanel {
     }
 
     public void drawAndSplit(Graphics g, int[] x, int[] y, int times) {
-        if (times >= levels)
-            return;
-        else {
+        if (times >= levels){
             g.fillPolygon(x, y, 3);
+            return;
+        }
+            
+        else {
+            g.drawPolygon(x, y, 3);
             int[] x1 = midpoints(x);
             int[] y1 = midpoints(y);
             int[] xA = { x[0], x1[0], x1[2] };
@@ -64,7 +72,7 @@ public class SerpinskisTriangle extends JPanel {
         JFrame window = new JFrame("Fractals");
         window.setBounds(200, 200, 500, 500);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        SerpinskisTriangle panel = new SerpinskisTriangle(3);
+        SerpinskisTriangle panel = new SerpinskisTriangle(5);
         panel.setBackground(Color.WHITE);
         Container c = window.getContentPane();
         c.add(panel);
