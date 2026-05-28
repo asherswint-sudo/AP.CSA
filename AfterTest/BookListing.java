@@ -9,7 +9,7 @@ public class BookListing{
     }
     public void printDescription(){
         test.printBookInfo();
-        System.out.print("$" + price);
+        System.out.print(", $" + price);
 
 
     }
