@@ -8,7 +8,7 @@ public class Elephant extends Herbivore {
         this.tuskLength = tuskLength;
     }
 
-    @Override
+
     public String toString() {
         return getName() + " the " + getSpecies() + " is a " + getAnimalType()
                + " with tusks " + tuskLength + " meters long";
